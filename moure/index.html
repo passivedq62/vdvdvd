@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="./uhoh.js"></script>
+<script src="./anti-inspect-element.js"></script>
+<head>
+     <style>
+  body {
+  background-image:url("https://media.discordapp.net/attachments/1244329330587205704/1246993825205846046/bloody_banner.gif?ex=6660633f&is=665f11bf&hm=bee116c748f17875f7a69728bb29758e54aa7e546bf627725283314640261f9a&="); background-size: cover
+  }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+    <link rel="stylesheet" href="user.css">
+    <script src="snowstorm.js"></script>
+    <title>moure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="https://cdn.discordapp.com/emojis/1232693242412273735.webp?size=96&quality=lossless">
+    <style>
+      @font-face {
+        font-family:'Mine.ttf';
+        src: url('Mine.ttf') format('truetype');
+      }
+       
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: soild black;
+            font-family: 'Mine.ttf', monospace;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+        }
+
+        #container {
+            text-align: center;
+            display: none; 
+        }
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid black; 
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+            max-width: 150px; 
+        }
+
+        #Milo-text {
+            font-size: clamp(30px, 10vw, 40px); 
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1); 
+        }
+
+        #footer {
+            font-size: clamp(16px, 10vw, 24px); 
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        .telegram-icon,
+        .discord-icon,
+        .globe-icon {
+            font-size: 32px;
+            color: black; 
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        button {
+            background-color: transparent; 
+            border: none;
+            padding: 0; 
+            cursor: pointer;
+            margin: 8px; 
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0); 
+        }
+
+        button:hover {
+            transform: translateY(-3px); 
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-right: 2px solid rgba(255, 255, 255, 0.8) }
+        }
+
+        .typewriter {
+            overflow: hidden; 
+            border-right: 2px solid rgba(255, 255, 255, 0.8); 
+            white-space: nowrap; 
+            animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite; 
+        }
+
+        #click-me {
+            color: black;
+            font-size: clamp(40px, 10vw, 60px);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); 
+            cursor: pointer;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+            to { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+        }
+
+        body {
+            cursor: url('meowbin.cur'), url('meowbin.cur'), url('meowbin.cur'), auto;
+        }
+    </style>
+</head>
+<body>
+   
+
+
+       <div id="container">
+        <img src="https://media.discordapp.net/attachments/1247416235722018867/1247673557765586994/73616A74-FA7D-4396-A964-2E8B18F6ACED.jpg?ex=6660e20c&is=665f908c&hm=a7507c598843203e98a3435b9aca1a3e7183c9a7df9570010bc0711ead5e7e6b&=&format=webp&width=408&height=400"> 
+        <div id="Milo-text">moure</div> 
+        <div id="footer">
+            <span id="typing-text" class="typewriter"></span> 
+        </div>
+        <div class="dabox">
+            <a href="https://discord.gg/7SqHZaXK7S"><button><i class="fab fa-discord discord-icon"></i></button></a>
+            <a href="https://doxbin.com/user/qualifier "><button><i class="fa fa-globe globe-icon" aria-hidden="true"></i></button></a>
+        </div>
+    </div>
+
+
+    <div id="click-me" onclick="showContent()">CLICK ME</div>
+
+    <audio id="backgroundMusic">
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="music.ogg" type="audio/ogg">
+    </audio>
+
+    <script>
+        function showContent() {
+            document.getElementById("container").style.display = "block";
+            document.getElementById("click-me").style.display = "none";
+
+            const audio = document.getElementById("backgroundMusic");
+            audio.play();
+        }
+
+        const textElement = document.getElementById("typing-text");
+        const texts = ["watching", "the", "blood drip"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                textElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                textElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                setTimeout(type, 1500); 
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(type, 500);
+            } else {
+                setTimeout(type, 50); 
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
+    <script>
+        var titles = ["suicide", " деатх", "нумб"];
+        var currentTitleIndex = 0;
+        function changeTitle() {
+            document.title = titles[currentTitleIndex];
+            currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+        }
+        setInterval(changeTitle, 300);
+    </script>
+</body>
+</html>
